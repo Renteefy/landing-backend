@@ -12,9 +12,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.PORT }} 
+          password: ${{ secrets.PASSWORD }}
           script: |
             cd landing 
             pm2 stop landing-service
