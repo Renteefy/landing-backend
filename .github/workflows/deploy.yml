@@ -1,0 +1,25 @@
+name: Deploy Landing page changes to Droplet
+on:
+  push:
+    branches: [main]
+jobs:
+  jobOne:
+    name: Deploying new push update to prod server
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking ssh connection and updating code
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }} 
+          script: |
+            cd landing 
+            pm2 stop landing-service
+            git pull
+            npm run build
+            pm2 start landing-service
+            pm2 restart landing-service
+            
