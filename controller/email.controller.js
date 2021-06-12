@@ -5,6 +5,7 @@ const validator = require("validator");
 const registerEmail = async (req, res) => {
   console.log(req.body);
   const { email } = req.body;
+  if (!email) return res.send({ statusCode: 400, message: "badformat" });
   if (!validator.isEmail(email))
     return res.send({ statusCode: 400, message: "bad format" });
   const client = getMongoClient();
