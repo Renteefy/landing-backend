@@ -14,10 +14,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd landing 
-            pm2 stop landing-service
+            cd landing-backend 
+            pm2 stop landing-backend-service
             git pull
-            npm run build
-            pm2 start landing-service
-            pm2 restart landing-service
+            pm2 start landing-backend-service
+            pm2 restart landing-backend-service
             
