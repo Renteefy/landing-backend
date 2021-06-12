@@ -12,7 +12,7 @@ const registerEmail = async (req, res) => {
   const emailExists = await Email.findOne({ email: email });
   if (emailExists) return res.send({ message: "redundant", statusCode: 400 });
   const doc = await Email.insertOne({ email: email });
-  if (doc) return res.send({ message: "sucess", statusCode: 200 });
+  if (doc) return res.send({ message: "success", statusCode: 200 });
   return res.send({ statusCode: 500, message: "failed" });
 };
 
