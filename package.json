@@ -12,12 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.45",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-rate-limit": "^5.2.6",
     "mongoose": "^5.12.13",
     "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "sib-api-v3-sdk": "^8.2.0",
     "validator": "^13.6.0"
   },
   "devDependencies": {
