@@ -13,8 +13,6 @@ We are currently in pre-development stages of the app and are looking forward wo
 
 Thanks again,
 <br>
-Yajat Vishwakarma,
-<br>
 Renteefy.
 `;
 
