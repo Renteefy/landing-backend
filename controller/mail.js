@@ -21,9 +21,7 @@ Renteefy.
 let defaultClient = SibApiV3Sdk.ApiClient;
 defaultClient = defaultClient.instance;
 
-var apiKey = defaultClient.authentications["api-key"];
-apiKey.apiKey =
-  "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";
+let apiKey = defaultClient.authentications["api-key"];
 
 let apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
@@ -36,8 +34,7 @@ async function createContact(email) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      "api-key":
-        "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",
+      "api-key": process.env.APIKEY,
     },
     body: JSON.stringify({ email: email, updateEnabled: false }),
   };
@@ -46,6 +43,7 @@ async function createContact(email) {
 }
 
 async function sendWelcome(email) {
+  apiKey.apiKey = process.env.APIKEY;
   sendSmtpEmail.subject = "Welcome to Renteefy";
   sendSmtpEmail.htmlContent = htmltemplateWelcome;
   sendSmtpEmail.sender = {

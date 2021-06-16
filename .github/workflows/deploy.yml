@@ -17,6 +17,7 @@ jobs:
             cd landing-backend 
             pm2 stop landing-backend-service
             git pull
+            npm install
             pm2 start landing-backend-service
             pm2 restart landing-backend-service
             
