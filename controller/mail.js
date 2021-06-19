@@ -45,7 +45,7 @@ async function sendWelcome(email) {
   sendSmtpEmail.subject = "Welcome to Renteefy";
   sendSmtpEmail.htmlContent = htmltemplateWelcome;
   sendSmtpEmail.sender = {
-    name: "Yajat Vishwakarma",
+    name: "Renteefy",
     email: "renteefy@gmail.com",
   };
   sendSmtpEmail.to = [{ email: email }];
