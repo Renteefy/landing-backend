@@ -5,6 +5,8 @@ const morgan = require("morgan");
 
 const { contactRouter } = require("./router/contact.router");
 const { emailRouter } = require("./router/email.router");
+const { connectMongo } = require("./controller/dbConfig");
+connectMongo();
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes

@@ -1,5 +1,5 @@
 const { connectMongo, getMongoClient } = require("./dbConfig");
-connectMongo();
+
 const validator = require("validator");
 const { createContact, sendWelcome } = require("./mail");
 
@@ -20,7 +20,7 @@ const registerEmail = async (req, res) => {
   const doc = await Email.insertOne({ email: email });
   if (doc) {
     createContact(email);
-    sendWelcome(email);
+    //sendWelcome(email);
     return res.send({ message: "success", statusCode: 200 });
   }
   return res.send({
@@ -29,9 +29,4 @@ const registerEmail = async (req, res) => {
   });
 };
 
-const mailChimpPing = async (req, res) => {
-  const response = await sendTransactionalTest();
-  res.send(response);
-};
-
-module.exports = { registerEmail, mailChimpPing };
+module.exports = { registerEmail };

@@ -1,5 +1,4 @@
-const { connectMongo, getMongoClient } = require("./dbConfig");
-connectMongo();
+const { getMongoClient } = require("./dbConfig");
 const validator = require("validator");
 
 const raiseTicket = async (req, res) => {
