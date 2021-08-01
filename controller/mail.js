@@ -70,4 +70,4 @@ async function sendWelcome(email) {
   );
 }
 
-module.exports = { createContact };
+module.exports = { createContact, sendWelcome };
