@@ -20,7 +20,7 @@ const registerEmail = async (req, res) => {
   const doc = await Email.insertOne({ email: email });
   if (doc) {
     createContact(email);
-    //sendWelcome(email);
+    sendWelcome(email);
     return res.send({ message: "success", statusCode: 200 });
   }
   return res.send({

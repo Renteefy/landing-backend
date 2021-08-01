@@ -41,33 +41,33 @@ async function createContact(email) {
 }
 
 // send mail through send in blue automation
-// async function sendWelcome(email) {
-//   apiKey.apiKey = process.env.APIKEY;
-//   sendSmtpEmail.subject = "Welcome to Renteefy";
-//   sendSmtpEmail.htmlContent = htmltemplateWelcome;
-//   sendSmtpEmail.sender = {
-//     name: "Renteefy",
-//     email: "renteefy@gmail.com",
-//   };
-//   sendSmtpEmail.to = [{ email: email }];
-//   // sendSmtpEmail.cc = [{ email: "example2@example2.com", name: "Janice Doe" }];
-//   // sendSmtpEmail.bcc = [{ email: "John Doe", name: "example@example.com" }];
-//   // sendSmtpEmail.replyTo = { email: "replyto@domain.com", name: "John Doe" };
-//   //sendSmtpEmail.headers = { "Some-Custom-Name": "unique-id-1234" };
-//   sendSmtpEmail.params = {
-//     parameter: "My param value",
-//     subject: "New Subject",
-//   };
-//   apiInstance.sendTransacEmail(sendSmtpEmail).then(
-//     function (data) {
-//       console.log(
-//         "API called successfully. Returned data: " + JSON.stringify(data)
-//       );
-//     },
-//     function (error) {
-//       console.error(error);
-//     }
-//   );
-// }
+async function sendWelcome(email) {
+  apiKey.apiKey = process.env.APIKEY;
+  sendSmtpEmail.subject = "Welcome to Renteefy";
+  sendSmtpEmail.htmlContent = htmltemplateWelcome;
+  sendSmtpEmail.sender = {
+    name: "Renteefy",
+    email: "renteefy@gmail.com",
+  };
+  sendSmtpEmail.to = [{ email: email }];
+  // sendSmtpEmail.cc = [{ email: "example2@example2.com", name: "Janice Doe" }];
+  // sendSmtpEmail.bcc = [{ email: "John Doe", name: "example@example.com" }];
+  // sendSmtpEmail.replyTo = { email: "replyto@domain.com", name: "John Doe" };
+  //sendSmtpEmail.headers = { "Some-Custom-Name": "unique-id-1234" };
+  sendSmtpEmail.params = {
+    parameter: "My param value",
+    subject: "New Subject",
+  };
+  apiInstance.sendTransacEmail(sendSmtpEmail).then(
+    function (data) {
+      console.log(
+        "API called successfully. Returned data: " + JSON.stringify(data)
+      );
+    },
+    function (error) {
+      console.error(error);
+    }
+  );
+}
 
 module.exports = { createContact };
