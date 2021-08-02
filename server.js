@@ -5,6 +5,7 @@ const morgan = require("morgan");
 
 const { contactRouter } = require("./router/contact.router");
 const { emailRouter } = require("./router/email.router");
+const { surveyRouter } = require("./router/survey.router");
 const { connectMongo } = require("./controller/dbConfig");
 connectMongo();
 
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/email", apiLimiter, emailRouter);
 app.use("/contact", apiLimiter, contactRouter);
+app.use("/survey", apiLimiter, surveyRouter);
 
 app.get("/", (req, res) => {
   res.send("Server online");
